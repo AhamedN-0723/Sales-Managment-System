@@ -134,7 +134,7 @@ Sales Management System/
 │   ├── Triggers
 │   └── SQL analysis queries
 │
-├── Sale Management Datasets/
+├── Sales Management Datasets.zip/
 │   └── Demo data files
 │
 └── README.md
@@ -301,7 +301,7 @@ Sales Management System Project
 This README matches exactly what you built:
 - `app.py` → Streamlit application  
 - `connection.py` → MySQL connection  
-- Dataset folder → demo data  
+- `Sales Management Datasets.zip` → demo data  
 - `salesmanage.sql` → database + trigger + analysis queries  
 
 It is also written in a way that a mentor evaluating your project can understand the architecture quickly.
