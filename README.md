@@ -123,19 +123,19 @@ Sales Management System/
 
 │
 ├── app.py
-│ └── Streamlit application
+│└── Streamlit application
 │
 ├── connection.py
-│ └── MySQL database connection setup
+│└── MySQL database connection setup
 │
 ├── salesmanage.sql
-│ └── Database creation
-│ └── Tables
-│ └── Triggers
-│ └── SQL analysis queries
+│└── Database creation
+│└── Tables
+│└── Triggers
+│└── SQL analysis queries
 │
 ├── Sale Management Datasets.zip/
-│ └── Demo data files
+│└── Demo data files
 │
 └── README.md
 
