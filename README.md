@@ -118,3 +118,189 @@ Used for displaying SQL query results in tabular format.
 ---
 
 # Project Structure
+
+Sales Management System/
+
+│
+├── app.py
+│ └── Streamlit application
+│
+├── connection.py
+│ └── MySQL database connection setup
+│
+├── salesmanage.sql
+│ └── Database creation
+│ └── Tables
+│ └── Triggers
+│ └── SQL analysis queries
+│
+├── Sale Management Datasets.zip/
+│ └── Demo data files
+│
+└── README.md
+
+
+---
+
+# Database Design
+
+The project contains the following main tables:
+
+## Users Table
+
+Stores login information and user roles.
+
+Example fields:
+
+- user_id
+- username
+- password
+- role
+- branch_id
+
+
+## Branches Table
+
+Stores branch information.
+
+Example fields:
+
+- branch_id
+- branch_name
+
+
+## Customer Sales Table
+
+Stores sales transactions.
+
+Example fields:
+
+- sale_id
+- branch_id
+- customer details
+- product details
+- gross sales
+- received amount
+- pending amount
+- status
+
+
+## Payment Splits Table
+
+Stores individual payment records.
+
+Example fields:
+
+- payment_id
+- sale_id
+- payment date
+- amount paid
+- payment method
+
+---
+
+# Trigger Implementation
+
+A database trigger is implemented to maintain financial accuracy.
+
+When a payment split is inserted:
+
+1. The total received amount is recalculated.
+2. The received_amount column in customer_sales is updated.
+3. The pending_amount is automatically adjusted.
+
+This ensures payment information remains consistent without manual updates.
+
+---
+
+# Installation and Setup
+
+## 1. Clone the repository
+git clone <repository-url>
+---
+
+## 2. Install required libraries
+pip install streamlit
+pip install mysql-connector-python
+pip install pandas
+
+---
+
+## 3. Setup MySQL Database
+
+Open MySQL and run:
+sales_management.sql
+
+This will create:
+
+- Database
+- Tables
+- Relationships
+- Triggers
+- Sample queries
+
+---
+
+## 4. Configure Database Connection
+
+Update `connection.py` with your MySQL credentials.
+
+Example:
+
+```python
+def get_connection():
+
+    return mysql.connector.connect(
+        host="localhost",
+        user="your_username",
+        password="your_password",
+        database="sales_management"
+    )
+
+```
+5. Run the Application
+
+Run:
+
+streamlit run app.py
+
+The application will open in your browser.
+
+Application Workflow
+User logs into the system.
+System validates credentials from MySQL.
+User role is identified.
+Dashboard access is provided based on role.
+Users can add sales and payment records.
+SQL triggers automatically update payment calculations.
+Reports display current sales and payment status.
+SQL Analysis Performed
+
+The project includes SQL analysis queries for:
+
+Sales reports
+Branch-wise sales analysis
+Pending payment tracking
+Open vs Closed sales analysis
+Payment details analysis
+Business performance monitoring
+Future Improvements
+Password encryption using hashing
+Advanced dashboard charts
+Export reports to Excel/PDF
+Better exception handling
+Additional analytics dashboards
+Author
+
+Your Name
+
+Sales Management System Project
+
+
+This README matches exactly what you built:
+- `app.py` → Streamlit application  
+- `connection.py` → MySQL connection  
+- Dataset folder → demo data  
+- `salesmanage.sql` → database + trigger + analysis queries  
+
+It is also written in a way that a mentor evaluating your project can understand the architecture quickly.
