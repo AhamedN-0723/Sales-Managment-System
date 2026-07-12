@@ -217,7 +217,7 @@ This ensures payment information remains consistent without manual updates.
 # Installation and Setup
 
 ## 1. Clone the repository
-git clone <repository-url>
+  git clone <repository-url>
 ---
 
 ## 2. Install required libraries
